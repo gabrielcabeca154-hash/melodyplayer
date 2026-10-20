@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyPlayer - Seu Player de Música</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>MelodyPlayer</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="home">
+                    <span class="icon">🏠</span>
+                    <span class="label">Início</span>
+                </a>
+                <a href="#" class="nav-item" data-section="library">
+                    <span class="icon">📚</span>
+                    <span class="label">Biblioteca</span>
+                </a>
+                <a href="#" class="nav-item" data-section="playlists">
+                    <span class="icon">📝</span>
+                    <span class="label">Playlists</span>
+                </a>
+                <a href="#" class="nav-item" data-section="search">
+                    <span class="icon">🔍</span>
+                    <span class="label">Buscar</span>
+                </a>
+            </nav>
+            <div class="sidebar-playlists">
+                <h3>Minhas Playlists</h3>
+                <ul id="playlist-list"></ul>
+                <button class="create-playlist-btn">+ Criar Playlist</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="home-section" class="content-section active">
+                <h2>Bem-vindo ao MelodyPlayer</h2>
+                <div class="recent-tracks">
+                    <h3>Reproduzidos Recentemente</h3>
+                    <div id="recent-tracks-list" class="track-list"></div>
+                </div>
+                <div class="recommended">
+                    <h3>Recomendados</h3>
+                    <div id="recommended-list" class="track-list"></div>
+                </div>
+            </section>
+
+            <section id="library-section" class="content-section">
+                <h2>Sua Biblioteca</h2>
+                <div class="library-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="albums">Álbuns</button>
+                    <button class="filter-btn" data-filter="artists">Artistas</button>
+                    <button class="filter-btn" data-filter="tracks">Músicas</button>
+                </div>
+                <div id="library-list" class="track-list"></div>
+            </section>
+
+            <section id="playlists-section" class="content-section">
+                <h2>Suas Playlists</h2>
+                <div id="playlists-grid" class="playlists-grid"></div>
+            </section>
+
+            <section id="search-section" class="content-section">
+                <h2>Buscar Músicas</h2>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar músicas, artistas ou álbuns...">
+                    <button id="search-btn">🔍</button>
+                </div>
+                <div id="search-results" class="track-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Player Bar -->
+    <div class="player-bar">
+        <div class="now-playing">
+            <div class="track-info">
+                <div class="track-image" id="track-image">
+                    <span class="placeholder">🎵</span>
+                </div>
+                <div class="track-details">
+                    <h4 id="track-title">Nenhuma música tocando</h4>
+                    <p id="track-artist">-</p>
+                </div>
+            </div>
+            <button class="like-btn" id="like-btn">♡</button>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button class="control-btn" id="shuffle-btn">🔀</button>
+                <button class="control-btn" id="prev-btn">⏮️</button>
+                <button class="control-btn play-pause" id="play-pause-btn">▶️</button>
+                <button class="control-btn" id="next-btn">⏭️</button>
+                <button class="control-btn" id="repeat-btn">🔁</button>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <input type="range" class="progress-slider" id="progress-slider" min="0" max="100" value="0">
+                </div>
+                <span id="total-time">0:00</span>
+            </div>
+            <div class="volume-control">
+                <button class="volume-btn" id="volume-btn">🔊</button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
