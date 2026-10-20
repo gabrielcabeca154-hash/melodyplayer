@@ -103,4 +103,4 @@ Para instruções detalhadas de como fazer upload deste projeto no GitHub, consu
 
 ## 🙏 Agradecimentos
 
-Inspiração arquitetural obtida através de análise defensiva do Spotify usando REA (Reverse Engineer Anything) para fins educacionais de engenharia reversa.
+
